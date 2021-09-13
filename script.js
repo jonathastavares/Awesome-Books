@@ -1,11 +1,14 @@
-var title = document.getElementById('title').value;
-var author = document.getElementById('author').value;
-addEventListener
+var form = document.getElementById('bookForm')
+var bookArray = []
+form.addEventListener("submit", Book)
 
-function Book(title, author) {
+function AddBook(event) {
+    event.preventDefault()
+    var title = document.getElementById('title').value;
+    var author = document.getElementById('author').value;
+    title = {book: title, author: author}
     this.title = title;
     this.author = author;
-    console.log('Book Created!');
-    console.log(this.title);
-    console.log(this.author);
+    bookArray.push(title)
+    console.log(bookArray);
 };
