@@ -26,11 +26,11 @@
         <form id='bookForm' class='text-center'>
           <label class='m-2'>Book Name</label>
           <br>
-          <input id='title' class='m-2' placeholder="Book Name">
+          <input id='title' class='m-2' placeholder="Book Name" required onInvalid="this.setCustomValidity('Book name and author are both required')">
           <br>
           <label class='m-2'>Book Author</label>
           <br>
-          <input id='author' class='m-2' placeholder="Book Author">
+          <input id='author' class='m-2' placeholder="Book Author/Unknown" required>
           <br>
           <button type='submit' class='btn btn-secondary m-2'>Add Book</button>
         </form>
