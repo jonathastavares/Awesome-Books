@@ -34,6 +34,9 @@
 
 Contributions, issues and feature requests are welcome!
 
+## License
+  <p>This project is <a href="LICENSE">MIT</a> licensed.</p>
+
 # Show your support
 
 Give a ⭐️ if you like this project!
