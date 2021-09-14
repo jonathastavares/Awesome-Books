@@ -4,7 +4,9 @@ const form = document.getElementById('bookForm');
 const bookArray = JSON.parse(localStorage.getItem('bookArray') || '[]');
 const listObj = document.getElementById('bookList');
 
-form.addEventListener('submit', AddBook);
+form.addEventListener('submit', (event) => {
+
+});
 
 function AddBook(event) {
   event.preventDefault();
