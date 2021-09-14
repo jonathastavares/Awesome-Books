@@ -1,5 +1,4 @@
 const form = document.getElementById('bookForm');
-const listObj = document.getElementById('bookList');
 
 class Book {
   constructor(title, author) {
@@ -20,6 +19,23 @@ class Save {
     localStorage.setItem('bookArray', JSON.stringify(bookArray));
     console.log(bookArray)
   }
+  static removeBook() {
+
+  }
+}
+
+class Load {
+  static listPopulate() {
+    const listObj = document.getElementById('bookList');
+      listObj.innerHTML = '';
+      Save.dataArray().forEach((bookElement, index) => {
+      listObj.innerHTML += `<li class='text-center '>Book Name: ${bookElement.book} Book Author: ${bookElement.author} <br> <button type='button' value="${index}" class='remove-btn btn btn-secondary text-center mt-2'>Remove</button></li><br>`;
+    });
+    const buttonArray = Array.from(document.getElementsByClassName('remove-btn'));
+    buttonArray.forEach((button) => {
+    button.addEventListener('click', Save.removeBook());
+  });
+  }
 }
 
 form.addEventListener('submit', (event) => {
@@ -31,5 +47,6 @@ form.addEventListener('submit', (event) => {
   const book = new Book(title, author)
 
   Save.saveBook(book)
+  Load.listPopulate()
 });
 
