@@ -1,4 +1,5 @@
 const form = document.getElementById('bookForm');
+const bookList = document.getElementById('bookList')
 
 class Book {
   constructor(title, author) {
@@ -19,8 +20,12 @@ class Save {
     localStorage.setItem('bookArray', JSON.stringify(bookArray));
     console.log(bookArray)
   }
-  static removeBook() {
-
+  static removeBook(event) {
+    const removeArr = Save.dataArray()
+    if (event.type == "button") {
+      removeArr.splice(event.value, 1);
+      localStorage.setItem('bookArray', JSON.stringify(removeArr));      
+    }
   }
 }
 
@@ -29,14 +34,12 @@ class Load {
     const listObj = document.getElementById('bookList');
       listObj.innerHTML = '';
       Save.dataArray().forEach((bookElement, index) => {
-      listObj.innerHTML += `<li class='text-center '>Book Name: ${bookElement.book} Book Author: ${bookElement.author} <br> <button type='button' value="${index}" class='remove-btn btn btn-secondary text-center mt-2'>Remove</button></li><br>`;
+      listObj.innerHTML += `<li class='text-center '>Book Name: ${bookElement.title} Book Author: ${bookElement.author} <br> <button type='button' value="${index}" class='remove-btn btn btn-secondary text-center mt-2'>Remove</button></li><br>`;
     });
-    const buttonArray = Array.from(document.getElementsByClassName('remove-btn'));
-    buttonArray.forEach((button) => {
-    button.addEventListener('click', Save.removeBook());
-  });
   }
 }
+
+document.addEventListener('DOMContentLoaded', Load.listPopulate())
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -48,5 +51,14 @@ form.addEventListener('submit', (event) => {
 
   Save.saveBook(book)
   Load.listPopulate()
+  form.reset()
 });
+
+bookList.addEventListener('click', (event) => {
+  Save.removeBook(event.target)
+
+  form.reset()
+
+  Load.listPopulate()
+})
 
