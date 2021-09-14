@@ -1,44 +1,6 @@
-/* eslint-disable max-classes-per-file */
+/* eslint-disable no-undef */
 const form = document.getElementById('bookForm');
 const bookList = document.getElementById('bookList');
-
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
-
-class Save {
-  static dataArray() {
-    const bookArray = JSON.parse(localStorage.getItem('bookArray') || '[]');
-    return bookArray;
-  }
-
-  static saveBook(book) {
-    const bookArray = Save.dataArray();
-    bookArray.push(book);
-    localStorage.setItem('bookArray', JSON.stringify(bookArray));
-  }
-
-  static removeBook(event) {
-    const removeArr = Save.dataArray();
-    if (event.type === 'button') {
-      removeArr.splice(event.value, 1);
-      localStorage.setItem('bookArray', JSON.stringify(removeArr));
-    }
-  }
-}
-
-class Load {
-  static listPopulate() {
-    const listObj = document.getElementById('bookList');
-    listObj.innerHTML = '';
-    Save.dataArray().forEach((bookElement, index) => {
-      listObj.innerHTML += `<li class='text-center '>Book Name: ${bookElement.title} Book Author: ${bookElement.author} <br> <button type='button' value="${index}" class='remove-btn btn btn-secondary text-center mt-2'>Remove</button></li><br>`;
-    });
-  }
-}
 
 document.addEventListener('DOMContentLoaded', Load.listPopulate());
 
