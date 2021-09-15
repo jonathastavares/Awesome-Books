@@ -1,44 +1,26 @@
-/* eslint-disable no-use-before-define */
-
+/* eslint-disable no-undef */
 const form = document.getElementById('bookForm');
-const bookArray = JSON.parse(localStorage.getItem('bookArray') || '[]');
-const listObj = document.getElementById('bookList');
+const bookList = document.getElementById('bookList');
 
-form.addEventListener('submit', AddBook);
+document.addEventListener('DOMContentLoaded', Load.listPopulate());
 
-function AddBook(event) {
+form.addEventListener('submit', (event) => {
   event.preventDefault();
-  let title = document.getElementById('title').value;
+
+  const title = document.getElementById('title').value;
   const author = document.getElementById('author').value;
-  title = {
-    book: title,
-    author,
-  };
-  bookArray.push(title);
-  localStorage.setItem('bookArray', JSON.stringify(bookArray));
-  ListPopulate();
-}
 
-function ListPopulate() {
-  listObj.innerHTML = '';
-  bookArray.forEach((bookElement, index) => {
-    listObj.innerHTML += `<li class='text-center '>Book Name: ${bookElement.book} Book Author: ${bookElement.author} <br> <button type='button' value="${index}" class='remove-btn btn btn-secondary text-center mt-2'>Remove</button></li><br>`;
-  });
-  ButtonListener();
-}
+  const book = new Book(title, author);
 
-function ButtonListener() {
-  const buttonArray = Array.from(document.getElementsByClassName('remove-btn'));
-  buttonArray.forEach((button) => {
-    button.addEventListener('click', RemoveBook);
-  });
-}
+  Save.saveBook(book);
+  Load.listPopulate();
+  form.reset();
+});
 
-function RemoveBook(event) {
-  const bookValue = event.target.value;
-  bookArray.splice(bookValue, 1);
-  localStorage.setItem('bookArray', JSON.stringify(bookArray));
-  ListPopulate();
-}
+bookList.addEventListener('click', (event) => {
+  Save.removeBook(event.target);
 
-ListPopulate();
+  form.reset();
+
+  Load.listPopulate();
+});
