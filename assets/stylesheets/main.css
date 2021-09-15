@@ -11,6 +11,8 @@
     margin: 0;
 }
 
-.number-height {
-    height: 55px;
+.table>:not(caption)>*>* {
+    border: 0;
 }
+
+ 
