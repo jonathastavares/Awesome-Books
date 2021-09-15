@@ -15,7 +15,7 @@
         <![endif]-->
         <h1 class='text-center'>All awesome Books</h1>
         <div id="table-container" class='d-flex justify-content-center'>
-          <table class="table table-secondary table-striped border border-secondary w-50">
+          <table class="table table-secondary table-striped border border-dark w-50 border-3">
             <tbody id='bookList' class='text-center'>
               <!-- Add Books List Here -->
             </tbody>
@@ -23,16 +23,16 @@
         </div>
         <hr class="line mx-auto mb-4">
         <div class="w-100 d-flex justify-content-center">
-        <form id='bookForm' class='text-center card w-25'>
-          <h3 class='no-margin card-header'>Book Name</h3>
+        <form id='bookForm' class='text-center w-25'>
+          <h2>Add a new book</h2>
           <br>
-          <input id='title' class='w-50 align-self-center' placeholder="Book Name" required onInvalid="this.setCustomValidity('Book name and author are both required')" oninput="this.setCustomValidity('')">
+          <input id='title' class='w-50 align-self-center mb-3 border-3 border-dark' placeholder="Title" required onInvalid="this.setCustomValidity('Book name and author are both required')" oninput="this.setCustomValidity('')">
           <br>
-          <h3 class='card-header border-top no-margin'>Book Author</h3>
+          <input id='author' class='w-50 align-self-center mb-3 border-3 border-dark' placeholder="Author" required>
           <br>
-          <input id='author' class='w-50 align-self-center no-margin' placeholder="Book Author/Unknown" required>
-          <br>
-          <button type='submit' class='btn btn-secondary mb-2 w-50 align-self-center'>Add Book</button>
+          <div class='d-flex justify-content-end w-75'>
+            <button type='submit' class='shadow mb-2 border-dark add-btn'>Add</button>
+          </div>
         </form>
       </div>
         <script src="book.js"></script>

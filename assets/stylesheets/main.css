@@ -10,20 +10,24 @@
   border: 0;
 }
 
-.remove-btn {
-    box-shadow: 4px 4px 1px -1px;
+.shadow {
+  box-shadow: 4px 4px 1px -1px !important;
 }
 
 .col-lg-6 {
-    width: 50% !important;
+  width: 50% !important;
 }
 
 .col-sm-12 {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 .line {
-    border-top: 3px solid black;
-    width: 25%;
-    opacity: 1;
+  border-top: 3px solid black;
+  width: 25%;
+  opacity: 1;
+}
+
+.add-btn {
+  width: 15%;
 }
