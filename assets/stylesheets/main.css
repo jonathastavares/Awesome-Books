@@ -1,18 +1,16 @@
 .bold-text {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .remove-btn {
-    max-height: 40px;
-    max-width: 35px;
+  max-height: 40px;
+  max-width: 35px;
 }
 
 .no-margin {
-    margin: 0;
+  margin: 0;
 }
 
-.table>:not(caption)>*>* {
-    border: 0;
+.table > :not(caption) > * > * {
+  border: 0;
 }
-
- 
