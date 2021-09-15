@@ -23,7 +23,7 @@
         <form id='bookForm' class='text-center'>
           <label class='m-2'>Book Name</label>
           <br>
-          <input id='title' class='m-2' placeholder="Book Name" required onInvalid="this.setCustomValidity('Book name and author are both required')">
+          <input id='title' class='m-2' placeholder="Book Name" required onInvalid="this.setCustomValidity('Book name and author are both required')" oninput="this.setCustomValidity('')">
           <br>
           <label class='m-2'>Book Author</label>
           <br>
