@@ -2,11 +2,6 @@
     font-weight: bold;
 }
 
-.remove-btn {
-    max-height: 40px;
-    max-width: 35px;
-}
-
 .no-margin {
     margin: 0;
 }
@@ -15,4 +10,20 @@
     border: 0;
 }
 
- 
+.remove-btn {
+    box-shadow: 4px 4px 1px -1px;
+}
+
+.col-lg-6 {
+    width: 50% !important;
+}
+
+.col-sm-12 {
+    width: 100% !important;
+}
+
+.line {
+    border-top: 3px solid black;
+    width: 25%;
+    opacity: 1;
+}
