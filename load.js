@@ -5,7 +5,7 @@ class Load {
     const listObj = document.getElementById('bookList');
     listObj.innerHTML = '';
     Save.dataArray().forEach((bookElement, index) => {
-      listObj.innerHTML += `<li class='text-center '>Book Name: ${bookElement.title} Book Author: ${bookElement.author} <br> <button type='button' value="${index}" class='remove-btn btn btn-secondary text-center mt-2'>Remove</button></li><br>`;
+      listObj.innerHTML += `<tr><th scope="row" class='align-middle border border-secondary number-height'>${index + 1}</th><td class='d-flex justify-content-between align-items-center'><p class='no-margin'><span class='bold-text'>'${bookElement.title}'</span> by ${bookElement.author}</p><button type='button' value="${index}" class='remove-btn btn btn-secondary text-center'>X</button></td></tr>`;
     });
   }
 }

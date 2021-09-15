@@ -1,0 +1,16 @@
+.bold-text {
+    font-weight: bold;
+}
+
+.remove-btn {
+    max-height: 40px;
+    max-width: 35px;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.number-height {
+    height: 55px;
+}
