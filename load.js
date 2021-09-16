@@ -17,36 +17,31 @@ class Load {
 
   static pages() {
     const listObj = document.getElementById('list');
-    const addNewObj = document.getElementById('add-new')
-    const contactObj = document.getElementById('contact')
+    const addNewObj = document.getElementById('add-new');
+    const contactObj = document.getElementById('contact');
 
-    listObj.addEventListener('click', Load.loadPage)
-    addNewObj.addEventListener('click', Load.loadPage)
-    contactObj.addEventListener('click', Load.loadPage)
+    listObj.addEventListener('click', Load.loadPage);
+    addNewObj.addEventListener('click', Load.loadPage);
+    contactObj.addEventListener('click', Load.loadPage);
   }
 
   static loadPage(event) {
     const listObj = document.getElementById('list-container');
-    const addNewObj = document.getElementById('add-new-container')
-    const contactObj = document.getElementById('contact-container')
-
-    console.log(event)
+    const addNewObj = document.getElementById('add-new-container');
+    const contactObj = document.getElementById('contact-container');
     if (event.target.innerText === 'List') {
-      console.log('List page')
-      listObj.classList.remove('d-none')
-      addNewObj.classList.add('d-none')
-      contactObj.classList.add('d-none')
+      listObj.classList.remove('d-none');
+      addNewObj.classList.add('d-none');
+      contactObj.classList.add('d-none');
       Load.listPopulate();
     } else if (event.target.innerText === 'Add new') {
-      console.log('Add new page')
-      listObj.classList.add('d-none')
-      addNewObj.classList.remove('d-none')
-      contactObj.classList.add('d-none')
+      listObj.classList.add('d-none');
+      addNewObj.classList.remove('d-none');
+      contactObj.classList.add('d-none');
     } else if (event.target.innerText === 'Contact') {
-      console.log('Contact page')
-      listObj.classList.add('d-none')
-      addNewObj.classList.add('d-none')
-      contactObj.classList.remove('d-none')
+      listObj.classList.add('d-none');
+      addNewObj.classList.add('d-none');
+      contactObj.classList.remove('d-none');
     }
   }
 

@@ -41,3 +41,7 @@
 .black {
   color: black;
 }
+
+.main-container {
+  min-height: calc(100vh - 160px);
+}

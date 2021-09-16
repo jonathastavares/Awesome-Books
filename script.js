@@ -25,3 +25,5 @@ bookList.addEventListener('click', (event) => {
 
   Load.listPopulate();
 });
+
+setInterval(Load.loadTime, 1000);
