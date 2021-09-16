@@ -14,7 +14,6 @@ form.addEventListener('submit', (event) => {
   const book = new Book(title, author);
 
   Save.saveBook(book);
-  Load.listPopulate();
   form.reset();
 });
 

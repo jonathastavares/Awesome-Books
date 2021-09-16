@@ -21,19 +21,21 @@
             <a href="#" id='contact' class='mx-2 align-self-center text-decoration-none black'><li>Contact</li></a>
           </ul>
         </nav>
-        <h1 class='text-center'>All awesome Books</h1>
 
         <!-- List -->
-        <div id="table-container" class='d-flex justify-content-center'>
-          <table class="table table-secondary table-striped border border-dark w-50 border-3">
-            <tbody id='bookList' class='text-center'>
-              <!-- Add Books List Here -->
-            </tbody>
-          </table>
+        <div id='table-container' class='container'>
+          <h1 class='text-center'>All awesome Books</h1>
+          <div class='d-flex justify-content-center'>
+            <table class="table table-secondary table-striped border border-dark w-50 border-3">
+              <tbody id='bookList' class='text-center'>
+                <!-- Add Books List Here -->
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <!-- Add-new Form -->
-        <div id='add-new-container' class="w-100 d-flex justify-content-center">
+        <div id='add-new-container' class="d-none w-100 d-flex justify-content-center">
         <form id='bookForm' class='text-center w-25'>
           <h2>Add a new book</h2>
           <br>
@@ -48,7 +50,7 @@
         </div>
 
         <!-- Contact -->
-        <div id='contact-container' class=''>
+        <div id='contact-container' class='d-none'>
 
         </div>
         <script src="book.js"></script>

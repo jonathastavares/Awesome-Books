@@ -21,8 +21,8 @@ class Load {
     const contactObj = document.getElementById('contact')
 
     listObj.addEventListener('click', Load.loadPage)
-    addNewObj.addEventListener('click', Load.loadPage('add-new-container'))
-    contactObj.addEventListener('click', Load.loadPage('contact-container'))
+    addNewObj.addEventListener('click', Load.loadPage)
+    contactObj.addEventListener('click', Load.loadPage)
   }
 
   static loadPage(event) {
@@ -31,15 +31,19 @@ class Load {
     const contactObj = document.getElementById('contact-container')
 
     console.log(event)
-    if (event === 'table-container') {
+    if (event.target.innerText === 'List') {
+      console.log('List page')
       listObj.classList.remove('d-none')
       addNewObj.classList.add('d-none')
       contactObj.classList.add('d-none')
-    } else if (event === 'add-new-container') {
+      Load.listPopulate();
+    } else if (event.target.innerText === 'Add new') {
+      console.log('Add new page')
       listObj.classList.add('d-none')
       addNewObj.classList.remove('d-none')
       contactObj.classList.add('d-none')
-    } else if (event === 'contact-container') {
+    } else if (event.target.innerText === 'Contact') {
+      console.log('Contact page')
       listObj.classList.add('d-none')
       addNewObj.classList.add('d-none')
       contactObj.classList.remove('d-none')
