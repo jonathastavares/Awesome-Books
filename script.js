@@ -4,6 +4,7 @@ const bookList = document.getElementById('bookList');
 
 document.addEventListener('DOMContentLoaded', Load.listPopulate());
 document.addEventListener('DOMContentLoaded', Load.pages());
+document.addEventListener('DOMContentLoaded', Load.loadTime());
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();

@@ -26,7 +26,7 @@ class Load {
   }
 
   static loadPage(event) {
-    const listObj = document.getElementById('table-container');
+    const listObj = document.getElementById('list-container');
     const addNewObj = document.getElementById('add-new-container')
     const contactObj = document.getElementById('contact-container')
 
@@ -48,5 +48,10 @@ class Load {
       addNewObj.classList.add('d-none')
       contactObj.classList.remove('d-none')
     }
+  }
+
+  static loadTime() {
+    const placeholder = document.getElementById('time');
+    time.innerHTML = DateLoader.getDate();
   }
 }
