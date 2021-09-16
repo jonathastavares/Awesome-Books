@@ -3,6 +3,7 @@ const form = document.getElementById('bookForm');
 const bookList = document.getElementById('bookList');
 
 document.addEventListener('DOMContentLoaded', Load.listPopulate());
+document.addEventListener('DOMContentLoaded', Load.pages());
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();

@@ -14,4 +14,35 @@ class Load {
       container.classList.remove('d-none');
     }
   }
+
+  static pages() {
+    const listObj = document.getElementById('list');
+    const addNewObj = document.getElementById('add-new')
+    const contactObj = document.getElementById('contact')
+
+    listObj.addEventListener('click', Load.loadPage)
+    addNewObj.addEventListener('click', Load.loadPage('add-new-container'))
+    contactObj.addEventListener('click', Load.loadPage('contact-container'))
+  }
+
+  static loadPage(event) {
+    const listObj = document.getElementById('table-container');
+    const addNewObj = document.getElementById('add-new-container')
+    const contactObj = document.getElementById('contact-container')
+
+    console.log(event)
+    if (event === 'table-container') {
+      listObj.classList.remove('d-none')
+      addNewObj.classList.add('d-none')
+      contactObj.classList.add('d-none')
+    } else if (event === 'add-new-container') {
+      listObj.classList.add('d-none')
+      addNewObj.classList.remove('d-none')
+      contactObj.classList.add('d-none')
+    } else if (event === 'contact-container') {
+      listObj.classList.add('d-none')
+      addNewObj.classList.add('d-none')
+      contactObj.classList.remove('d-none')
+    }
+  }
 }

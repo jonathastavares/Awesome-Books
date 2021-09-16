@@ -31,3 +31,13 @@
 .add-btn {
   width: 15%;
 }
+
+.nav-line {
+  height: 20px !important;
+  border: 1px solid black !important;
+  opacity: 1;
+}
+
+.black {
+  color: black;
+}

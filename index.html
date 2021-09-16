@@ -13,7 +13,17 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <nav class='d-flex justify-content-between border border-3 border-dark mx-3'>
+          <a href="#" class='text-decoration-none black mx-2'><h2>Awesome Books</h2></a>
+          <ul class='d-flex no-margin mx-2'>
+            <a href="#" id='list' class='mx-2 align-self-center text-decoration-none black'><li>List</li></a><hr class='nav-line align-self-center no-margin bt-5'></hr>
+            <a href="#" id='add-new' class='mx-2 align-self-center text-decoration-none black'><li>Add new</li></a><hr class='nav-line align-self-center no-margin bt-5'></hr>
+            <a href="#" id='contact' class='mx-2 align-self-center text-decoration-none black'><li>Contact</li></a>
+          </ul>
+        </nav>
         <h1 class='text-center'>All awesome Books</h1>
+
+        <!-- List -->
         <div id="table-container" class='d-flex justify-content-center'>
           <table class="table table-secondary table-striped border border-dark w-50 border-3">
             <tbody id='bookList' class='text-center'>
@@ -21,8 +31,9 @@
             </tbody>
           </table>
         </div>
-        <hr class="line mx-auto mb-4">
-        <div class="w-100 d-flex justify-content-center">
+
+        <!-- Add-new Form -->
+        <div id='add-new-container' class="w-100 d-flex justify-content-center">
         <form id='bookForm' class='text-center w-25'>
           <h2>Add a new book</h2>
           <br>
@@ -34,7 +45,12 @@
             <button type='submit' class='shadow mb-2 border-dark add-btn'>Add</button>
           </div>
         </form>
-      </div>
+        </div>
+
+        <!-- Contact -->
+        <div id='contact-container' class=''>
+
+        </div>
         <script src="book.js"></script>
         <script src="save.js"></script>
         <script src="load.js"></script>
