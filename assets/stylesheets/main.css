@@ -1,0 +1,33 @@
+.bold-text {
+  font-weight: bold;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.table > :not(caption) > * > * {
+  border: 0;
+}
+
+.shadow {
+  box-shadow: 4px 4px 1px -1px !important;
+}
+
+.col-lg-6 {
+  width: 50% !important;
+}
+
+.col-sm-12 {
+  width: 100% !important;
+}
+
+.line {
+  border-top: 3px solid black;
+  width: 25%;
+  opacity: 1;
+}
+
+.add-btn {
+  width: 15%;
+}

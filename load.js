@@ -3,9 +3,15 @@
 class Load {
   static listPopulate() {
     const listObj = document.getElementById('bookList');
+    const container = document.getElementById('table-container');
     listObj.innerHTML = '';
     Save.dataArray().forEach((bookElement, index) => {
-      listObj.innerHTML += `<li class='text-center '>Book Name: ${bookElement.title} Book Author: ${bookElement.author} <br> <button type='button' value="${index}" class='remove-btn btn btn-secondary text-center mt-2'>Remove</button></li><br>`;
+      listObj.innerHTML += `<tr><td class='d-flex justify-content-between align-items-center'><p class='no-margin'><span>'${bookElement.title}'</span> by ${bookElement.author}</p><button type='button' value="${index}" class='shadow border-dark remove-btn text-center'>Remove</button></td></tr>`;
     });
+    if (listObj.innerHTML === '') {
+      container.classList.add('d-none');
+    } else {
+      container.classList.remove('d-none');
+    }
   }
 }
