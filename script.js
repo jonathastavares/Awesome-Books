@@ -3,6 +3,8 @@ const form = document.getElementById('bookForm');
 const bookList = document.getElementById('bookList');
 
 document.addEventListener('DOMContentLoaded', Load.listPopulate());
+document.addEventListener('DOMContentLoaded', Load.pages());
+document.addEventListener('DOMContentLoaded', Load.loadTime());
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -13,7 +15,6 @@ form.addEventListener('submit', (event) => {
   const book = new Book(title, author);
 
   Save.saveBook(book);
-  Load.listPopulate();
   form.reset();
 });
 
@@ -24,3 +25,5 @@ bookList.addEventListener('click', (event) => {
 
   Load.listPopulate();
 });
+
+setInterval(Load.loadTime, 1000);

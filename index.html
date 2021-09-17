@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='en-US'>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,31 +13,63 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1 class='text-center'>All awesome Books</h1>
-        <div id="table-container" class='d-flex justify-content-center'>
-          <table class="table table-secondary table-striped border border-dark w-50 border-3">
-            <tbody id='bookList' class='text-center'>
-              <!-- Add Books List Here -->
-            </tbody>
-          </table>
-        </div>
-        <hr class="line mx-auto mb-4">
-        <div class="w-100 d-flex justify-content-center">
-        <form id='bookForm' class='text-center w-25'>
-          <h2>Add a new book</h2>
-          <br>
-          <input id='title' class='w-50 align-self-center mb-3 border-3 border-dark' placeholder="Title" required onInvalid="this.setCustomValidity('Book name and author are both required')" oninput="this.setCustomValidity('')">
-          <br>
-          <input id='author' class='w-50 align-self-center mb-3 border-3 border-dark' placeholder="Author" required>
-          <br>
-          <div class='d-flex justify-content-end w-75'>
-            <button type='submit' class='shadow mb-2 border-dark add-btn'>Add</button>
+        <nav class='d-flex justify-content-between border border-3 border-dark mx-3 mt-2'>
+          <a href="#" class='text-decoration-none black mx-2'><h2>Awesome Books</h2></a>
+          <div class='d-flex no-margin mx-2'>
+            <a href="#" id='list' class='mx-2 align-self-center text-decoration-none black'>List</a>
+            <hr class='nav-line align-self-center no-margin bt-5'>
+            <a href="#" id='add-new' class='mx-2 align-self-center text-decoration-none black'>Add new</a>
+            <hr class='nav-line align-self-center no-margin bt-5'>
+            <a href="#" id='contact' class='mx-2 align-self-center text-decoration-none black'>Contact</a>
           </div>
-        </form>
-      </div>
+        </nav>
+        <div id="time" class="time text-end mx-3 mt-2 bold-text">placeholder</div>
+        <div class="main-container">
+        <!-- List -->
+          <div id='list-container' class='container'>
+            <h1 class='text-center'>All awesome Books</h1>
+            <div class='d-flex justify-content-center'>
+              <table id= 'table-container' class="table table-secondary table-striped border border-dark w-50 border-3">
+                <tbody id='bookList' class='text-center'>
+                  <!-- Add Books List Here -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Add-new Form -->
+          <div id='add-new-container' class="d-none w-100 d-flex justify-content-center">
+          <form id='bookForm' class='text-center w-25'>
+            <h2>Add a new book</h2>
+            <br>
+            <input id='title' class='w-50 align-self-center mb-3 border-3 border-dark' placeholder="Title" required onInvalid="this.setCustomValidity('Book name and author are both required')" oninput="this.setCustomValidity('')">
+            <br>
+            <input id='author' class='w-50 align-self-center mb-3 border-3 border-dark' placeholder="Author" required>
+            <br>
+            <div class='d-flex justify-content-end w-75'>
+              <button type='submit' class='shadow mb-2 border-dark add-btn'>Add</button>
+            </div>
+          </form>
+          </div>
+
+          <!-- Contact -->
+          <div id='contact-container' class='d-none'>
+            <h1 class="text-center">Contact information</h1>
+            <h3 class="bold-text mt-5 text-center">Do you have any questions or just want to say "hello"?</h3>
+            <h3 class="bold-text text-center">You can reach out to us!</h3>
+            <p class="mt-5 bold-text text-center">• Our email: mail@mail.com</p>
+            <p class="bold-text text-center">• Our phone number: 0043586534422</p>
+            <p class="bold-text text-center">• Our adress: Streetname 22, 84503 City, Country</p>
+          </div>
+        </div>
+        <footer class="mx-3 mb-2 footer border border-2 border-dark justify-self-end">
+          <p class="my-3 mx-1">Copyright: developed by Leonardo L. da Paz and Jonathas S. Tavares</p>
+        </footer>
+        <script src="luxon.js"></script>
         <script src="book.js"></script>
         <script src="save.js"></script>
         <script src="load.js"></script>
+        <script src="date.js"></script>
         <script src="script.js" async defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
       </body>
